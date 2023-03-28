@@ -9,7 +9,7 @@ node {
     imageName = "${registryHost}${appName}:${tag}"
 
     stage('Build-Code'){
-        withMaven('maven'){
+        withMaven(maven: 'maven'){
             sh 'mvn clean package'
         }
     }
