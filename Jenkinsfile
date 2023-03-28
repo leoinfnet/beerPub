@@ -15,5 +15,10 @@ node {
         }
         customImage = docker.build("${imageName}")
     }
+    stage('Push-Images'){
+        customImage.push()
+
+    }
+
 
 }
