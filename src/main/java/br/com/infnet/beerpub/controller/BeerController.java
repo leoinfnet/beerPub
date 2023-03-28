@@ -12,7 +12,7 @@ import java.util.Map;
 public class BeerController {
     @GetMapping
     public ResponseEntity hello(){
-        return ResponseEntity.ok(Map.of("Message", "Getting a ALE for U S2"));
+        return ResponseEntity.ok(Map.of("Message", "Getting a Stout for U S2"));
     }
 
 }
