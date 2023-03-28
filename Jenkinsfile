@@ -1,5 +1,6 @@
 node {
     checkout scm
+    def customImage
     //Pego o ID do ultimo commit
     sh "git rev-parse --short HEAD > commit-id"
     tag = readFile("commit-id").replace("\n", "").replace("\r", "")
@@ -12,6 +13,7 @@ node {
         withMaven(maven: 'maven'){
             sh 'mvn clean package'
         }
+        customImage = docker.build("${imageName}")
     }
 
 }
