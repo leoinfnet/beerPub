@@ -22,7 +22,7 @@ node {
     stage('Deploy'){
         customImage.push('latest')
         sh 'kubectl apply -f https://raw.githubusercontent.com/leoinfnet/beerPub/main/k8s_app.yaml '
-        sh 'kubectl set image deployment beerpub beerpub=${imageName} --record'
+        sh "kubectl set image deployment beerpub beerpub=${imageName} --record"
         sh 'kubectl rollout status deployment/beerpub'
 
     }
